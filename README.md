@@ -27,3 +27,10 @@ And add the line given below. Save and close.
 That is it. You can check if the system is using the swap file you created with the command
 
 `$ cat /proc/meminfo`
+
+`cd /
+sudo dd if=/dev/zero of=swapfile bs=1M count=3000
+sudo chmod 600 swapfile
+sudo mkswap swapfile
+sudo swapon swapfile
+sudo nano etc/fstab`
