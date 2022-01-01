@@ -41,3 +41,13 @@ That is it. You can check if the system is using the swap file you created with 
 `sudo swapon swapfile`
 
 `sudo nano etc/fstab`
+
+----
+
+How to `apt install foo-*` excluding some packages that conflict.
+
+```sh
+list=$(apt-cache --names-only search ^k3b-* | awk '{ print $1 }' | \
+    grep -v bad-pkg)
+sudo apt-get install $list
+```
